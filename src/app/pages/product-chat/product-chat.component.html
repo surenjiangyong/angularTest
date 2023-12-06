@@ -12,3 +12,15 @@
     <h3>价格列表2</h3>
     <p *ngFor="let li of pricesList">{{li.type + ':' + li.price}}</p>
 </div>
+
+<form [formGroup]="checkForm" (ngSubmit)="onSubmit()">
+    <div>
+        <label for="name">名字</label>
+        <input id="name" type="text" formControlName="name">
+    </div>
+    <div>
+        <label for="address">地址</label>
+        <input id="address" type="text" formControlName="address">
+    </div>
+    <button type="submit">提交</button>
+</form>
