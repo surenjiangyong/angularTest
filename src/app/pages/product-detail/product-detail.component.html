@@ -1,0 +1,15 @@
+
+<h1>详情</h1>
+<div *ngIf="product; else Pempty">
+    <!-- ; else Pempty -->
+    <h3>{{product.name}}</h3>
+    <div>{{product.description}}</div>
+    <p>${{product.price}}</p>
+    <button (click)="addChat(product)">添加购物车</button>
+</div>
+<ng-template #Pempty>
+    <div>数据为空</div>
+</ng-template>
+<!-- <div *ngIf="!product">
+    数据为空
+</div> -->

@@ -1,0 +1,14 @@
+<p>购物车</p>
+<div class="ul">
+    <div class="li" *ngFor="let li of chatList; index as i;">
+        <h3>{{i +'-'+ li.name}}</h3>
+        <p>{{li.description}}</p>
+        <hr>
+    </div>
+</div>
+<div>
+    <h3>价格列表1</h3>
+    <p *ngFor="let li of prices | async">{{li.type + ':' + li.price}}</p>
+    <h3>价格列表2</h3>
+    <p *ngFor="let li of pricesList">{{li.type + ':' + li.price}}</p>
+</div>

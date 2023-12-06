@@ -1,0 +1,15 @@
+
+<h2>产品列表标题</h2>
+<div class="ul">
+    <div *ngFor="let li of products; index as i;" >
+        <h3 [title]="li.name + li.description">{{li.name + i}}</h3>
+        <p>{{li.description + '___' + title}}</p>
+        <a [routerLink]="['/product', li.id]">{{li.name}}</a>
+    </div>
+    <hr>
+    <ng-template ngFor let-el [ngForOf]="products" let-i="index">
+        <h3 [title]="el.name + el.description">{{el.name + '___'+ el.description + '___' + i}}</h3>
+        <button *ngIf="el && el.price>700" (click)="share(el)">分享</button>
+    </ng-template>
+    <app-product-alert [product]="product" (notify)="onNotify($event)"></app-product-alert>
+</div>
