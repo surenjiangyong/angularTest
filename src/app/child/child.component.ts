@@ -8,4 +8,5 @@ import { Component, Input } from '@angular/core';
 export class ChildComponent {
   @Input() msg: string = '';
   txt = '';
+  name = '';
 }
