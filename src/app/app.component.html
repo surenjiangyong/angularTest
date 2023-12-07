@@ -1,6 +1,7 @@
 <app-top-bar></app-top-bar>
 <div class="content11" role="main" style="background: #eee;padding:10px 20px;">
     <p>{{message}}</p>
+    <h2>{{message}}</h2>
     <button type="button" (click)="onEditClick()">Make text editable!</button>
     <div *ngIf="canEdit; else noEdit">
       <p>You can edit the following paragraph.</p>
@@ -9,5 +10,10 @@
       <p>The following paragraph is read only. Try clicking the button!</p>
     </ng-template>
 </div>
+<app-child [msg]="message"></app-child>
 
 <router-outlet></router-outlet>
+
+<app-no-encapsulation></app-no-encapsulation>
+<app-emulated-encapsulation></app-emulated-encapsulation>
+<app-shadow-dom-encapsulation></app-shadow-dom-encapsulation>

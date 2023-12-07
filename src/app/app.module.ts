@@ -13,6 +13,11 @@ import { ProductDetailComponent } from './pages/product-detail/product-detail.co
 import { ProductChatComponent } from './pages/product-chat/product-chat.component';
 import { ShippingComponent } from './pages/shipping/shipping.component';
 
+import { NoEncapsulationComponent } from './no-encapsulation.component';
+import { ShadowDomEncapsulationComponent } from './shadow-dom-encapsulation.component';
+import { EmulatedEncapsulationComponent } from './emulated-encapsulation.component';
+import { ChildComponent } from './child/child.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +26,12 @@ import { ShippingComponent } from './pages/shipping/shipping.component';
     ProductAlertComponent,
     ProductDetailComponent,
     ProductChatComponent,
-    ShippingComponent
+    ShippingComponent,
+    
+    NoEncapsulationComponent,
+    ShadowDomEncapsulationComponent,
+    EmulatedEncapsulationComponent,
+    ChildComponent
   ],
   imports: [
     FormsModule,

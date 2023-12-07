@@ -1,14 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 
 import { CartService } from '../cart.service';
 
+// @Directive({selector: '[appSpy]'})
 @Component({
   selector: 'app-product-chat',
   templateUrl: './product-chat.component.html',
   styleUrls: ['./product-chat.component.scss']
 })
-export class ProductChatComponent implements OnInit {
+export class ProductChatComponent implements OnInit,OnDestroy {
   
   checkForm = this.FormBuilder.group({
     name:'',
@@ -22,8 +23,15 @@ export class ProductChatComponent implements OnInit {
   prices = this.CartService.getPrices();
   pricesList = <any[]>[];
   ngOnInit(): void {
+    console.log('chat组件被初始化')
     this.getPrice();
-  }
+  };
+  ngOnChange():void {
+    console.log('数据发生变化')
+  };
+  ngOnDestroy():void {
+    console.log('chat组件被销毁')
+  };
   getPrice(){
     this.CartService.getPrices().subscribe((res:any)=>{
         // console.log('res',res)
